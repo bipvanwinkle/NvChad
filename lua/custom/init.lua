@@ -40,6 +40,13 @@ hooks.add("install_plugins", function(use)
         require("custom.plugins.null-ls").setup()
     end,
   }
+
+  use {
+    "beauwilliams/focus.nvim", 
+    config = function ()
+      require("custom.plugins.focus").setup()
+    end
+  }
 end)
 
 -- alternatively, put this in a sub-folder like "lua/custom/plugins/mkdir"

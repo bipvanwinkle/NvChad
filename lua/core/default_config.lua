@@ -20,9 +20,9 @@ M.options = {
    numberwidth = 2,
    relativenumber = false,
    expandtab = true,
-   shiftwidth = 2,
+   shiftwidth = 4,
    smartindent = true,
-   tabstop = 8, -- Number of spaces that a <Tab> in the file counts for
+   tabstop = 4, -- Number of spaces that a <Tab> in the file counts for
    timeoutlen = 400,
    -- interval for writing swap file to disk, also used by gitsigns
    updatetime = 250,
@@ -35,7 +35,7 @@ M.options = {
       window_nav = true,
       theme_toggler = false,
       -- used for updater
-      update_url = "https://github.com/NvChad/NvChad",
+      update_url = "https://github.com/bipvanwinkle/NvChad",
       update_branch = "main",
    },
 }
@@ -63,7 +63,7 @@ M.plugins = {
       bufferline = true, -- list open buffers up the top, easy switching too
       colorizer = false, -- color RGB, HEX, CSS, NAME color codes
       comment = true, -- easily (un)comment code, language aware
-      dashboard = false, -- NeoVim 'home screen' on open
+      dashboard = true, -- NeoVim 'home screen' on open
       esc_insertmode = true, -- map to <ESC> with no lag
       feline = true, -- statusline
       gitsigns = true, -- gitsigns in statusline
@@ -72,7 +72,7 @@ M.plugins = {
       vim_matchup = true, -- % operator enhancements
       cmp = true,
       nvimtree = true,
-      autopairs = true,
+      autopairs = false,
    },
    options = {
       lspconfig = {
