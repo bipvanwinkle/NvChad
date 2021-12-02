@@ -33,11 +33,6 @@ M.setup = function()
    null_ls.config {
       sources = sources,
    }
-   require("lspconfig")["null-ls"].setup { 
-     on_attach = function(client, bufnr) 
-       vim.api.nvim_buf_set_keymap(bufnr, "n", "<space>fm", "<cmd>lua vim.lsp.buf.formatting()<CR>", {})
-     end
-   }
 end
 
 return M

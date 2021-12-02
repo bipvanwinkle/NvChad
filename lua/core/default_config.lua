@@ -144,9 +144,9 @@ M.mappings = {
       -- show & recover hidden terminal buffers in a telescope picker
       pick_term = "<leader>W",
       -- below three are for spawning terminals
-      new_horizontal = "<leader>h",
-      new_vertical = "<leader>v",
-      new_window = "<leader>w",
+      new_horizontal = "<leader>9999",
+      new_vertical = "<leader>9999",
+      new_window = "<leader>9999",
    },
    -- update nvchad from nvchad, chadness 101
    update_nvchad = "<leader>uu",

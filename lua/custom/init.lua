@@ -21,10 +21,11 @@ local hooks = require "core.hooks"
 -- you can set one or many mappings
 -- example below:
 
--- hooks.add("setup_mappings", function(map)
---    map("n", "<leader>cc", "gg0vG$d", opt) -- example to delete the buffer
---    .... many more mappings ....
--- end)
+hooks.add("setup_mappings", function(map)
+   map("n", "<leader>hw", ":HopWord<CR>")
+   map("n", "<leader>hl", ":HopLine<CR>")
+   map("n", "<leader>hc", ":HopChar1<CR>")
+end)
 
 -- To add new plugins, use the "install_plugin" hook,
 -- NOTE: we heavily suggest using Packer's lazy loading (with the 'event' field)
@@ -32,21 +33,30 @@ local hooks = require "core.hooks"
 -- examples below:
 --
 hooks.add("install_plugins", function(use)
-  use {
-    "jose-elias-alvarez/null-ls.nvim",
+   use {
+      "jose-elias-alvarez/null-ls.nvim",
       -- load it after nvim-lspconfig , since we'll use some lspconfig stuff in the null-ls config!
       after = "nvim-lspconfig",
       config = function()
-        require("custom.plugins.null-ls").setup()
-    end,
-  }
+         require("custom.plugins.null-ls").setup()
+      end,
+   }
 
-  use {
-    "beauwilliams/focus.nvim", 
-    config = function ()
-      require("custom.plugins.focus").setup()
-    end
-  }
+   use {
+      "beauwilliams/focus.nvim",
+      config = function()
+         require("custom.plugins.focus").setup()
+      end,
+   }
+
+   use {
+      "phaazon/hop.nvim",
+      branch = "v1", -- optional but strongly recommended
+      config = function()
+         -- you can configure Hop the way you like here; see :h hop-config
+         require("hop").setup { keys = "etovxqpdygfblzhckisuran" }
+      end,
+   }
 end)
 
 -- alternatively, put this in a sub-folder like "lua/custom/plugins/mkdir"
