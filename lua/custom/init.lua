@@ -25,6 +25,7 @@ hooks.add("setup_mappings", function(map)
    map("n", "<leader>hw", ":HopWord<CR>")
    map("n", "<leader>hl", ":HopLine<CR>")
    map("n", "<leader>hc", ":HopChar1<CR>")
+   map("n", "<C-f>", ":Format<CR>")
 end)
 
 -- To add new plugins, use the "install_plugin" hook,
@@ -56,6 +57,13 @@ hooks.add("install_plugins", function(use)
          -- you can configure Hop the way you like here; see :h hop-config
          require("hop").setup { keys = "etovxqpdygfblzhckisuran" }
       end,
+   }
+
+   use {
+       "mhartington/formatter.nvim",
+       config = function ()
+           require("custom.plugins.formatter").setup()
+       end
    }
 end)
 
